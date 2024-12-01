@@ -1,0 +1,28 @@
+.admin-dashboard-container .admin-dashboard-content {
+    .admin-revenue-container {
+        .revenue-month-picker {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            label {
+                margin-bottom: 0;
+            }
+
+            .react-datepicker-wrapper {
+                width: auto;
+            }
+        }
+    }
+
+    .sort-container {
+        margin-left: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.2s;
+        user-select: none;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

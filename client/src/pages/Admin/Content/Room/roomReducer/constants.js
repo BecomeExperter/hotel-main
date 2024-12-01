@@ -1,0 +1,10 @@
+export const SET_ROOMS = 'SET_ROOMS';
+export const SET_ROOM_NUMBER = 'SET_ROOM_NUMBER';
+export const SET_ROOM_FILES = 'SET_ROOM_FILES';
+export const SET_ROOM_DESCRIPTION = 'SET_ROOM_DESCRIPTION';
+export const SET_ROOM_PRICE = 'SET_ROOM_PRICE';
+export const SET_ROOM_NOTE = 'SET_ROOM_NOTE';
+export const SET_ROOM_STATUS = 'SET_ROOM_STATUS';
+export const SET_ROOM_TYPE = 'SET_ROOM_TYPE';
+export const ADD_ROOM = 'ADD_ROOM';
+export const DELETE_ROOM = 'DELETE_ROOM';

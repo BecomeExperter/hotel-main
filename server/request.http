@@ -1,0 +1,224 @@
+#API for Register
+#Return the API key
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "Name": "Admin User",
+    "phoneNumber": "1234567890",
+    "password": "admin"
+}
+
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+#API for Register
+#Return the API key
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "thi",
+    "email": "admin@gmail.com",
+    "Name": "Admin User",
+    "phoneNumber": "1234567890",
+    "password": "admin"
+}
+
+###
+GET http://localhost:5000/api/rooms/allrooms
+
+###
+GET http://localhost:5000/api/rooms/637e284ae33d42bcff40f1d1
+
+
+
+# API for USER CHANGE INFO BY ADMIN
+# RETURN USER INFO
+###
+PUT http://localhost:5000/api/user/636fa03d49bfa2c96bc5e63c/change-info
+Content-Type: application/json
+
+{
+    "username": "test",
+    "email": "khanhtruc1234@gmail.com",
+    "Name": "Nguyen Quang Huynh",
+    "phoneNumber": "1234567890",
+    "CMND": "215605309",
+    "address": "Ha Noi",
+    "typeUser": "Foreign"
+}
+
+
+# API for USER CHANGE INFO BY ADMIN
+# RETURN USER INFO
+###
+PUT http://localhost:5000/api/user/6376e4fdda1b6ac096e9e52b/change-info-all
+Content-Type: application/json
+
+{
+    "username": "nghia123",
+    "email": "khanhtruc123@gmail.com",
+    "password": "080902",
+    "newPassword": "123456",
+    "Name": "Nguyen Quang Huynh",
+    "phoneNumber": "1234567890",
+    "CMND": "0123456789",
+    "address": "Ha Noi",
+    "isAdmin": true
+}
+
+
+
+#API for change password
+#return user info change password
+#if fail return error
+###
+PUT http://localhost:5000/api/user/636bc941491cf68652805555/change-password
+Content-Type: application/json
+
+{
+    "password": "test",
+    "newPassword": "26022002"
+}
+
+
+# API for delete user
+#return state:  success, fail
+###
+DELETE http://localhost:5000/api/user/63652199299739c3475974fa/delete
+
+
+# API for get all user
+#return list user
+#return length of list user
+###
+GET http://localhost:5000/api/user/all
+
+
+# API for get all user
+#return list user
+#return length of list user
+#param: http://localhost:5000/api/user/:page/:limit
+
+###
+GET http://localhost:5000/api/user/3/5
+
+
+
+# API for get user by id
+#return user info
+###
+GET http://localhost:5000/api/user/636bc941491cf68652805555
+
+
+
+# API for add user by admin
+#return user info added
+###
+POST http://localhost:5000/api/user/add
+Content-Type: application/json
+
+{
+    "username": "nghia123",
+    "email": "khanhtruc123@gmail.com",
+    "password": "080902",
+    "Name": "Nguyen Quang Huynh",
+    "phoneNumber": "1234567890",
+    "CMND": "0123456789",
+    "address": "Ha Noi",
+    "isAdmin": true
+}
+
+
+# API for get list direction room
+#return list direction room
+ 
+###
+GET http://localhost:5000/api/room-type/all
+
+
+
+#API for get room by direction (id)
+#return room by direction
+###
+GET http://localhost:5000/api/room-type/637600d5635ea1b71d200719
+
+#API for create room direction
+#return room direction created
+###
+POST http://localhost:5000/api/room-type/create
+Content-Type: application/json
+
+{
+    "description": "For those travellers on the go or business visitors our Superior Rooms offers the perfect haven. They have restricted or no views yet offer a quiet and private refuge and access to all the facilities, including breakfast in the frangipani courtyard, that our historic hotel has to offer.",
+    "typeOfRooms":"A",
+    "imageUrls" : ["https://i.imgur.com/1ZQ3Z0M.jpg"],
+    "price":"250000",
+    "listRoom": ["515","612","758"],
+}
+
+#API for update room direction
+#return room direction updated
+###
+PUT http://localhost:5000/api/room-type/update/636cc5c568cdc75fd8a85da5
+Content-Type: application/json
+
+{
+    "description": "Organizers choose Hotel Continental Saigon to hold their meetings because of hotel’s meeting rooms are well equipped and offer a wide choice of meeting functions such as workshops, seminars, product launches and video conferences",
+    "typeOfRooms":"C",
+    "imageUrls" : ["https://i.imgur.com/1ZQ3Z0M.jpg"],
+    "price":"250000",
+    "listRoom": ["515","612","758"],
+}
+
+#API for delete room direction
+#return state:  success, fail
+###
+DELETE http://localhost:5000/api/room-type/delete/63721b5f29fe4a26af2f724e
+
+###
+GET  http://localhost:5000/api/upload/
+
+
+
+###
+
+POST http://localhost:5000/api/booking/create
+Content-Type: application/json
+
+{
+    "roomNumber": "101",
+    "rentperDate": "2022-11-27T13:59:10.068Z",
+    "checkOutDate": "2022-11-27T13:59:10.068Z",
+    "totalAmount": "1000000",
+    "status": "da thue"
+}
+
+###
+POST http://localhost:5000/api/booking/
+Content-Type: application/json
+
+{
+    "roomNumber": "101",
+    "rentperDate": "2022-11-27T13:59:10.068Z",
+    "checkOutDate": "2022-11-27T13:59:10.068Z",
+    "totalAmount": "1000000",
+    "status": "da thue"
+}
+
+###
+GET http://localhost:5000/api/booking/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzY0YzJlMDQ3YWNjYmYyNmIzMDQ3YjUiLCJpYXQiOjE2Njk1NTgwMTR9.dGDJYajsQSVR6qjxqtxy7idbuvuXFTGqMzxFahwZv1Y
+
+

@@ -1,0 +1,155 @@
+.admin-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &.is-not-admin {
+        padding: 100px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+        gap: 20px;
+        overflow: hidden;
+
+        .warning-img {
+            width: 200px;
+            height: 200px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .header-container {
+        height: 72px;
+        padding: 0 40px;
+        background-color: #0e2737;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left-content,
+        .right-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .right-content {
+            gap: 12px;
+        }
+
+        .item {
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+            cursor: pointer;
+
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                transition: background 0.2s;
+                user-select: none;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.08);
+                }
+            }
+        }
+    }
+
+    .admin-content {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+
+        .admin-sidebar {
+            height: 100%;
+
+            .pro-sidebar {
+                z-index: 9;
+                width: 320px;
+                min-width: 0;
+                box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+
+                &.collapsed {
+                    width: 0;
+                }
+
+                .pro-sidebar-inner {
+                    background-color: #fff;
+
+                    .pro-sidebar-header {
+                        height: 52px;
+                        line-height: 52px;
+                        color: #212121;
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+
+                    .pro-sidebar-content {
+                        padding: 12px 0;
+                        .pro-menu {
+                            padding-top: 0;
+                            padding-bottom: 0;
+
+                            .pro-sub-menu {
+                                .pro-inner-list-item {
+                                    background-color: inherit;
+                                }
+                            }
+                            .pro-menu-item {
+                                height: 45px;
+                                margin: 1px 0;
+                                font-weight: 500;
+
+                                .pro-inner-item {
+                                    transition: background 0.2s;
+                                    color: #616161;
+
+                                    &:hover {
+                                        background-color: #f0f0f0;
+                                        color: #616161;
+                                    }
+
+                                    .pro-item-content {
+                                        .active {
+                                            color: #212121;
+
+                                            &::before {
+                                                background-color: #f0f0f0;
+                                                z-index: -1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .title {
+                text-align: center;
+                text-decoration: none;
+                color: #212121;
+            }
+        }
+
+        .admin-main {
+            width: 100%;
+            overflow-y: overlay;
+            padding: 20px 60px;
+        }
+    }
+}
